@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <title>Buycoins coding challenge</title>
@@ -13,6 +13,7 @@
 
 
   <header class="header">
+
     <div class="display--flex header__container">
       <div class="hide--desktop header__menu">
         <button id="menu-btn" class="menu-btn center display--flex" style="border: non;" type="button">
@@ -34,7 +35,7 @@
             <div  style="margin-right: 1rem;">
               <form class="search-form" action="">
                 <div class="search-form__control display--flex center">
-                  <input class="search-form__input" id="search" type="search" name="search" placeholder="Search or jump to...">
+                  <input class="search-form__input" id="searchUserDesktop" type="search" name="search" placeholder="Search or jump to...">
                   <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="">
                 </div>
               </form>
@@ -85,7 +86,7 @@
         <div>
           <form class="search-form" action="">
             <div class="search-form__control display--flex center">
-              <input class="search-form__input" id="search" type="search" name="search" placeholder="Search or jump to...">
+              <input class="search-form__input" id="searchUserMobile" type="search" name="search" placeholder="Search or jump to...">
               <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="">
             </div>
           </form>
@@ -102,15 +103,16 @@
     </div>
   </header>
   <main">
-    <div class="container">
-      <div class="main__container display--flex">
-        <div class="main__block main__block--1">
-          <!-- <div class="invisible-div" ></div> -->
-        </div>
+    <div class="container--mb" id="userInfo">
+      <div class="main__container display--flex hide" id="main">
+        <!-- invisible section -->
+        <section class="main__block main__block--1 line" id="hide">
+        </section>
+        <!-- end invisible section-->
 
-        <!-- sub navigation -->
-        <div class="main__block main__block--2">
-          <nav class="sub-nav display--flex">
+        <!-- sub navigation section-->
+        <section class="main__block main__block--2 line" id="navbar">
+          <nav class="sub-nav display--flex" id="sticky-nav">
             <a href="#" class="sub-nav__item display--flex center">
               <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="sub-nav__icon">
                 <path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"></path>
@@ -138,31 +140,47 @@
             </a>
 
             <a href="#" class="sub-nav__item display--flex center">
-              <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="sub-nav__icon">
+              <svg  aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="sub-nav__icon">
                 <path fill-rule="evenodd" d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z"></path>
               </svg>
               
               Packages
             </a>
           </nav>
-        </div>
+        </section>
+        <!-- end sub-navigation -->
 
-        <!-- profile details -->
-        <div class="main__block main__block--3">
-          <div>
-            <div>
-              <img style="height:auto;" alt="Avatar" width="260" height="260" class="avatar avatar-user width-full border color-bg-primary" src="https://avatars.githubusercontent.com/u/8677283?v=4">
-            </div>
-            <div>
-              <p>Ire Aderinokun</p>
-              <p>ireade</p>
+        <!-- profile details  section-->
+        <div class="main__block main__block--3" id="profile">
+          
+        </div>
+        <!-- end profile details section -->
+
+
+        <!-- repository Section -->
+        <div class="main__block main__block--4">
+
+          <div class="repo-section">
+            <form class="search-form" action="">
+              <input class="search-form__input search-form__input--repo " id="search" type="search" name="search" placeholder="Find a repository…">
+            </form>
+
+            <div class="line"></div>
+
+            <!-- <div class="repo-count repo__description line">
+              130 result for public repositories
+            </div> -->
+
+            <div class="repos" id="repos">
             </div>
           </div>
         </div>
-        <div class="main__block main__block--4">4</div>
+        <!-- repository Section end -->
       </div>
     </div>
   </main>
 </body>
-<script src="ui.js"></script>
+<script src="js/guthub.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
 </html>
